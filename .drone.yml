@@ -1,0 +1,11 @@
+image: dockerfile/nodejs
+name: keystonejs-example
+script:
+  - apt-get -y install git make g++ python
+  - npm config set ca ""
+  - npm install
+  - npm test
+env:
+  - EXAMPLE_MONGODB_URL=mongodb://$MONGODB_PORT_27017_TCP_ADDR/keystonejs-example
+services:
+  - dockerfile/mongodb

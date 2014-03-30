@@ -2,16 +2,22 @@
 
 This is example CMS app for [keystone.js](https://github.com/JedWatson/keystone).
 
-# Getting started
+Differences from [Jed's keystone demo](https://github.com/JedWatson/keystone-demo) app:
 
+* start demo inside docker containers to get started quicker (and make README file shorter).
+* use popular [mustache](https://github.com/janl/mustache.js) as template engine
+
+# Prerequiste
+
+* docker installed. See [Docker installation](https://www.docker.io/gettingstarted/#h_installation)
+
+# Start
+
+1. clone this example app:
+	
 	$ git clone https://github.com/shawnzhu/keystonejs-example.git
-	$ cd keystonejs-example
 
-Start mongodb:
-
-	$ docker run -d -name mongodb dockerfile/mongodb
-
-Start keystoneJS app by linking mongodb and mount application directory:
+2. start mongodb in a docker container:
 
     $ docker run -d -link mongodb:db -p 3000:3000 \
     -v $(pwd):/root/keystonejs-example:rw dockerfile/nodejs \
@@ -21,6 +27,8 @@ Make sure the app is started by checking logs:
 
 	$ docker logs <keystone-container-id>
 
-Then visit `http://localhost:3000` and you will see *Hello World*
+# Next
 
-You can sign in `http://localhost:3000/keystone` with demo account `demo@example.com` and password `demo`.
+Visit `http://localhost:3000` and you will see **Hello World**.
+
+Sign in `http://localhost:3000/keystone` with demo admin account `demo@example.com` and password `demo`.
