@@ -12,7 +12,7 @@ keystone.init({
   "view engine": "mustache",
   
   "auto update": true,
-  "mongo": process.env.EXAMPLE_MONGODB_URL || "mongodb://192.168.10.101/keystonejs-example",
+  "mongo": process.env.EXAMPLE_MONGODB_URL || "mongodb://localhost/keystonejs-example",
   
   "session": true,
   "auth": true,
