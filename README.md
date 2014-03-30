@@ -13,19 +13,25 @@ Differences from [Jed's keystone demo](https://github.com/JedWatson/keystone-dem
 
 # Start
 
-1. clone this example app:
-	
-	$ git clone https://github.com/shawnzhu/keystonejs-example.git
+clone this example app:
 
-2. start mongodb in a docker container:
+```bash	
+$ git clone https://github.com/shawnzhu/keystonejs-example.git
+```
 
-    $ docker run -d -link mongodb:db -p 3000:3000 \
-    -v $(pwd):/root/keystonejs-example:rw dockerfile/nodejs \
-    bash /root/keystonejs-example/start.sh
+start mongodb in a docker container:
+
+```bash
+$ docker run -d -link mongodb:db -p 3000:3000 \
+-v $(pwd):/root/keystonejs-example:rw dockerfile/nodejs \
+bash /root/keystonejs-example/start.sh
+```
 
 Make sure the app is started by checking logs:
 
-	$ docker logs <keystone-container-id>
+```bash
+$ docker logs <keystone-container-id>
+```
 
 # Next
 
