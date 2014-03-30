@@ -22,6 +22,12 @@ $ git clone https://github.com/shawnzhu/keystonejs-example.git
 start mongodb in a docker container:
 
 ```bash
+docker run -d -name mongodb dockerfile/mongodb
+```
+
+start KeystoneJS app:
+
+```bash
 $ docker run -d -link mongodb:db -p 3000:3000 \
 -v $(pwd):/root/keystonejs-example:rw dockerfile/nodejs \
 bash /root/keystonejs-example/start.sh
